@@ -1,6 +1,5 @@
 <template>
   <div>
-    <nuxt-link to="/">Home</nuxt-link>
     <h1>{{ workSpaceName }}</h1>
   </div>
 </template>
@@ -10,6 +9,10 @@ import { workspaceList } from '~~/store/global';
 
 const route = useRoute();
 
+const board = {
+  name: 'board',
+  colums: [],
+};
 let workSpaceName = '';
 
 workSpaceName = workspaceList.value.find((workspace) => workspace.id === route.params.id).name;
